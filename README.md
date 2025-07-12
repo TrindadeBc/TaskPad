@@ -50,17 +50,17 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 
 
 
-\*\*📝 Cadastro de Tarefas:\*\* Cada tarefa pertence a um grupo; campos: título, descrição, prazo, duração estimada, prioridade inicial e status\[cite: 17, 18].
+\* \*\*📝 Cadastro de Tarefas:\*\* Cada tarefa pertence a um grupo; campos: título, descrição, prazo, duração estimada, prioridade inicial e status.
 
-\*\*⏱️ Priorização Dinâmica:\*\* Recalcula a prioridade conforme o tempo restante até o prazo\[cite: 19].
+\* \*\*⏱️ Priorização Dinâmica:\*\* Recalcula a prioridade conforme o tempo restante até o prazo.
 
-\*\*🔄 Estados da Tarefa:\*\* Pendente, Iniciada (com % concluído) ou Finalizada\[cite: 20].
+\* \*\*🔄 Estados da Tarefa:\*\* Pendente, Iniciada (com % concluído) ou Finalizada.
 
-\*\*⏰ Alarmes Inteligentes:\*\* Notificações quando tempo restante ≤ duração estimada + margem de segurança\[cite: 21].
+\* \*\*⏰ Alarmes Inteligentes:\*\* Notificações quando tempo restante ≤ duração estimada + margem de segurança.
 
-\*\*🗂️ Estrutura de Abas:\*\* Pendentes ranqueadas por prioridade; \[cite\_start]Concluídas agrupadas por grupo\[cite: 22].
+\* \*\*🗂️ Estrutura de Abas:\*\* Pendentes ranqueadas por prioridade; Concluídas agrupadas por grupo.
 
-\*\*🔍 Detalhamento Clicável:\*\* Sub-painel para anotações internas da tarefa\[cite: 23].
+\* \*\*🔍 Detalhamento Clicável:\*\* Sub-painel para anotações internas da tarefa.
 
-\*\*📊 Estatísticas \& Reforço Positivo:\*\* Barra de progresso global e destaques de conquistas\[cite: 24].
+\* \*\*📊 Estatísticas \& Reforço Positivo:\*\* Barra de progresso global e destaques de conquistas.
 
