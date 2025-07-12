@@ -2,49 +2,41 @@
 
 # 
 
-# \## Visão Geral do Projeto
+# ➤ O TaskPad nasce como um bloco de anotações inteligente voltado a quem precisa organizar múltiplas frentes de trabalho — sejam elas acadêmicas, profissionais ou pessoais. O usuário poderá registrar cada tarefa em um só lugar, classificá-la por prioridade, atribuir prazos e acompanhar o avanço de cada atividade.
 
 # 
 
-# O TaskPad nasce como um bloco de anotações inteligente voltado a quem precisa organizar múltiplas frentes de trabalho — sejam elas acadêmicas, profissionais ou pessoais. O usuário poderá registrar cada tarefa em um só lugar, classificá-la por prioridade, atribuir prazos e acompanhar o avanço de cada atividade. A premissa central é simples: reduzir a sobrecarga mental gerada por lembretes dispersos, transformando a seleção de tarefas a realizar/pendentes em algo mais visual, motivador e — acima de tudo — proativo. Vale lembrar que o intuito dessa aplicação NÃO é de calendário!
+# ➤ A premissa central é simples: reduzir a sobrecarga mental gerada por lembretes dispersos, transformando a seleção de tarefas pendentes em algo mais visual, motivador e — acima de tudo — proativo. Vale lembrar que o intuito desta aplicação não é ser um calendário!
 
 # 
 
-# Cada tarefa pertencerá a um grupo de atividade (por exemplo: “UFU”, “Estágio”, “IC” ou “Viagem”), permitindo filtrar rapidamente o que é urgente em cada contexto. Além do título e de uma descrição livre (que só aparece ao clicar para abrir), será possível definir a duração estimada para sua execução e um prazo final (deadline). A partir daí, o TaskPad recalculará automaticamente a prioridade sempre que o tempo restante diminuir, assegurando que nada “escorregue” por falta de visibilidade e tempo.
+# ➤ Cada tarefa pertencerá a um grupo de atividade (ex: “UFU”, “Estágio”, “IC”), permitindo filtrar rapidamente o que é urgente em cada contexto. Será possível definir a duração estimada para sua execução e um prazo final (deadline). A partir daí, o TaskPad recalcula automaticamente a prioridade conforme o tempo restante diminui, assegurando que nada seja esquecido.
 
 # 
 
-# Quando o usuário desejar, poderá mudar o status da tarefa para Iniciada — informando um percentual concluído — ou para Finalizada. Essa mudança não apenas altera a cor ou posição do item na lista: ela alimenta um painel de estatísticas que celebra conquistas e evidencia o progresso geral, gerando reforço positivo para manter a motivação em alta.
+# ➤ O usuário poderá alterar o status da tarefa para "Iniciada" (com um percentual de conclusão) ou "Finalizada". Essa mudança alimenta um painel de estatísticas que celebra conquistas e evidencia o progresso geral, gerando reforço positivo para manter a motivação.
 
 # 
 
-# Há, ainda, um sistema de alarmes inteligentes: o TaskPad dispara notificações quando o tempo restante até o prazo fica menor que a soma “duração estimada + margem de segurança” escolhida pelo usuário. Dessa forma, problemas são sinalizados antes de se tornarem urgentes de fato.
+# ➤ Há, ainda, um sistema de alarmes inteligentes: o TaskPad dispara notificações quando o tempo restante até o prazo fica menor que a soma da “duração estimada + margem de segurança” definida pelo usuário, sinalizando problemas antes que se tornem urgentes.
 
 # 
 
-# A interface será dividida em duas abas principais — Pendentes e Concluídas. As pendentes aparecem todas juntas, ranqueadas pela prioridade (definida pelo usuário, mas ajustada com um fator de correção baseado no tempo restante e tempo estimado). Já as tarefas concluídas surgem agrupadas pelo respectivo grupo de atividade, mantendo o espaço limpo e intuitivo. Cada item é clicável: ao expandi-lo, o usuário acessa notas e detalhes extras sem poluir a visão geral.
+# \### ✨ Requisitos Resumidos
 
 # 
 
-# Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedback positivo para transformar a gestão de tarefas em uma experiência mais leve e eficiente.
+# \* 📝 \*\*Cadastro de Tarefas:\*\* Campos para título, descrição, prazo, duração, prioridade e status.
 
-# 
+# \* ⏱️ \*\*Priorização Dinâmica:\*\* Recalcula a prioridade com base na urgência e no prazo.
 
-# \### Requisitos Resumidos
+# \* 🔄 \*\*Estados da Tarefa:\*\* Pendente, Iniciada (com % de progresso) ou Finalizada.
 
-# 
+# \* ⏰ \*\*Alarmes Inteligentes:\*\* Notificações proativas baseadas na duração e no prazo.
 
-# \* 📝 \*\*Cadastro de Tarefas\*\* – cada tarefa pertence a um grupo; campos: título, descrição, prazo, duração estimada, prioridade inicial e status.
+# \* 🗂️ \*\*Estrutura de Abas:\*\* Separação clara entre tarefas pendentes e concluídas.
 
-# \* ⏱️ \*\*Priorização Dinâmica\*\* – recalcula a prioridade conforme o tempo restante até o prazo.
+# \* 🔍 \*\*Detalhamento Clicável:\*\* Expansão de itens para ver detalhes sem poluir a tela.
 
-# \* 🔄 \*\*Estados da Tarefa\*\* – Pendente, Iniciada (com % concluído) ou Finalizada.
-
-# \* ⏰ \*\*Alarmes Inteligentes\*\* – notificações quando tempo restante ≤ duração estimada + margem de segurança.
-
-# \* 🗂️ \*\*Estrutura de Abas\*\* – Pendentes ranqueadas por prioridade; Concluídas agrupadas por grupo.
-
-# \* 🔍 \*\*Detalhamento Clicável\*\* – sub-painel para anotações internas da tarefa.
-
-# \* 📊 \*\*Estatísticas \& Reforço Positivo\*\* – barra de progresso global e destaques de conquistas.
+# \* 📊 \*\*Estatísticas Visuais:\*\* Painel com o progresso geral e conquistas.
 
