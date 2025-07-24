@@ -66,7 +66,7 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 
 
 --------------------------------------------------------------------------------------------------
-###### ✨Segmentação em Requisitos obrigatórios(MVP) e Complementares
+##### ✨Segmentação em Requisitos obrigatórios(MVP) e Complementares
 
 > **MVP:** focar nas funcionalidades obrigatórias (cadastro, status, abas, detalhamento e estatísticas básicas). Priorização dinâmica e alarmes inteligentes serão tratados como complementares, após entrega do núcleo do produto, caso haja tempo hábil.
 
