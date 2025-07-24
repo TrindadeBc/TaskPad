@@ -46,7 +46,7 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 
 
 
-\### ✨ Requisitos Resumidos
+\### ✨ Requisitos Resumidos (Preeliminares)
 
 
 
@@ -63,4 +63,39 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 \* \*\*🔍 Detalhamento Clicável:\*\* Sub-painel para anotações internas da tarefa.
 
 \* \*\*📊 Estatísticas \& Reforço Positivo:\*\* Barra de progresso global e destaques de conquistas.
+
+
+--------------------------------------------------------------------------------------------------
+###### ✨Segmentação em Requisitos obrigatórios(MVP) e Complementares
+
+> **MVP:** focar nas funcionalidades obrigatórias (cadastro, status, abas, detalhamento e estatísticas básicas). Priorização dinâmica e alarmes inteligentes serão tratados como complementares, após entrega do núcleo do produto, caso haja tempo hábil.
+
+---
+
+### ✨ Funcionalidades
+
+#### Obrigatórias (MVP)
+- 📝 **Cadastro de Tarefas**  
+  - CRUD com campos: título, descrição, prazo, duração estimada, prioridade inicial, status e grupo.
+- 🔄 **Estados da Tarefa**  
+  - Pendente, Iniciada (com % concluído) e Finalizada.
+- 🗂️ **Abas “Pendentes” e “Concluídas”**  
+  - Pendentes: ordenadas por prioridade inicial.  
+  - Concluídas: agrupadas por grupo de atividade.
+- 🔍 **Detalhamento Clicável**  
+  - Expansão in line p notas/descrições extras.
+- 📊 **Estatísticas Básicas**  
+  - % de tarefas finalizadas.  
+  - Contador simples de conquistas (ex.: tarefas concluídas hoje ou na semana).
+
+#### Complementares (após MVP)
+- ⏱️ **Priorização Dinâmica**  
+  - Recalculada conforme tempo restante e duração estimada.
+- ⏰ **Alarmes Inteligentes**  
+  - Notificações quando `tempo_restante ≤ duração + margem de segurança`.
+- ⚙️ Configuração de margem de segurança por usuário/grupo.
+- 🖱️ Arrastar e soltar para reorder.
+- 🔍 Busca avançada e filtros.
+- 📲 Notificações push e sync cross-device.
+- 📈 Relatórios gráficos de progresso por grupo.
 
