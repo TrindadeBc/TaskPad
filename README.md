@@ -95,7 +95,6 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 - ⏰ **Alarmes Inteligentes**  
   - Notificações quando `tempo_restante ≤ duração + margem de segurança`.
 - ⚙️ Configuração de margem de segurança por usuário/grupo.
-- 🖱️ Arrastar e soltar para reorder.
 - 🔍 Busca avançada e filtros.
 - 📲 Notificações push e sync cross-device.
 - 📈 Relatórios gráficos de progresso por grupo.
