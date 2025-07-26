@@ -76,7 +76,7 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 
 #### Obrigatórias (MVP)
 - 📝 **Cadastro de Tarefas**  
-  - CRUD com campos: título, descrição, prazo, duração estimada, prioridade inicial, status e grupo.
+  - CRUD (create, read, update, delete) com campos: título, descrição, prazo, duração estimada, prioridade inicial, status e grupo.
 - 🔄 **Estados da Tarefa**  
   - Pendente, Iniciada (com % concluído) e Finalizada.
 - 🗂️ **Abas “Pendentes” e “Concluídas”**  
