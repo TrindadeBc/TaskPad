@@ -84,13 +84,14 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
   - Concluídas: agrupadas por grupo de atividade.
 - 🔍 **Detalhamento Clicável**  
   - Expansão in line p notas/descrições extras.
-- 📊 **Estatísticas Básicas**  
-  - % de tarefas finalizadas.  
-  - Contador simples de conquistas (ex.: tarefas concluídas hoje ou na semana).
+
 
 #### Complementares (após MVP)
 - ⏱️ **Priorização Dinâmica**  
   - Recalculada conforme tempo restante e duração estimada.
+- 📊 **Estatísticas Básicas**  
+  - % de tarefas finalizadas.  
+  - Contador simples de conquistas (ex.: tarefas concluídas hoje ou na semana).
 - ⏰ **Alarmes Inteligentes**  
   - Notificações quando `tempo_restante ≤ duração + margem de segurança`.
 - ⚙️ Configuração de margem de segurança por usuário/grupo.
