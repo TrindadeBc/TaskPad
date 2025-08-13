@@ -1,9 +1,5 @@
-.container-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding-left: 30px; /* espaço do lado esquerdo */
-}
+
+
 .card {
     width: 250px;
     border: 1px solid #ddd;
