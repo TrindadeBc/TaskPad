@@ -1,9 +1,19 @@
-<div>
-    <label class="form-label">Nome tarefa</label>
-    <input type="text" class="form-control">
-</div>
+<div class="card">
+  <ng-container *ngIf="editando; else modoVisualizacao">
+    <label>Nome tarefa</label>
+    <input [(ngModel)]="tarefa.nome" class="form-control" type="text">
 
-<div>
-    <label class="form-label">Descrição tarefa</label>
-    <input type="text" class="form-control">
+    <label>Descrição tarefa</label>
+    <textarea [(ngModel)]="tarefa.descricao" class="form-control textarea-descricao"></textarea>
+    <div class="botoes">
+      <button (click)="salvar()" class="btn-salvar">Salvar</button>
+      <button (click)="cancelar.emit()" class="btn-cancelar">Cancelar</button>
+    </div>
+  </ng-container>
+
+  <ng-template #modoVisualizacao>
+    <h3>{{ tarefa.nome }}</h3>
+    <p>{{ tarefa.descricao }}</p>
+    <button (click)="editando = true" class="btn-editar">Editar</button>
+  </ng-template>
 </div>
