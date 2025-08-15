@@ -1,0 +1,42 @@
+package com.pds.taskpad.controller;
+
+import com.pds.taskpad.model.Tarefa;
+import com.pds.taskpad.repository.TarefaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/tarefas")
+public class TarefaController {
+
+    @Autowired
+    private TarefaRepository tarefaRepository;
+
+    @PostMapping
+    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
+        return tarefaRepository.save(tarefa);
+    }
+
+    @GetMapping
+    public List<Tarefa> listarTarefas() {
+        return tarefaRepository.findAll();
+    }
+
+    @PutMapping("/{id}")
+    public Tarefa atualizarTarefa(@PathVariable Long id, @RequestBody Tarefa tarefaAtualizada) {
+        Tarefa tarefa = tarefaRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada"));
+
+        tarefa.setNome(tarefaAtualizada.getNome());
+        tarefa.setDescricao(tarefaAtualizada.getDescricao());
+        tarefa.setData(tarefaAtualizada.getData());
+        tarefa.setStatus(tarefaAtualizada.getStatus());
+
+        return tarefaRepository.save(tarefa);
+    }
+
+}
