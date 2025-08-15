@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, ButtonPrimaryComponent, TarefaComponent, FormularioComponent, CommonModule],
+  imports: [RouterOutlet, NavbarComponent, FormularioComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
