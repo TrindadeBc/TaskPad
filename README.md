@@ -99,3 +99,49 @@ Em resumo, o TaskPad combina clareza visual, automação de prioridades e feedba
 - 📲 Notificações push e sync cross-device.(para uma futura implementação mobile)
 - 📈 Relatórios gráficos de progresso por grupo.
 
+---
+## Pré-requisitos
+
+Antes de começar, garanta que você tem as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
+
+* [Node.js](https://nodejs.org/) (versão 20.x ou superior é recomendada para garantir a compatibilidade).
+* [Angular CLI](https://angular.dev/tools/cli) (instalado globalmente).
+
+Para instalar o Angular CLI, caso ainda não o tenha, utilize o seguinte comando no seu terminal:
+
+```bash
+npm install -g @angular/cli
+
+---
+## Instalação ⚙️
+
+1. Clone este repositório para a sua máquina: `git clone <URL_DO_REPOSITORIO>`
+2. Navegue até a pasta raiz do projeto pelo terminal.
+3. Rode o seguinte comando para instalar todas as dependências listadas no `package.json`:
+
+```bash
+npm install
+
+Este comando irá criar a pasta node_modules com todas as bibliotecas necessárias para o projeto funcionar.
+
+---
+## Como Rodar o Projeto ▶
+
+Após a instalação bem-sucedida das dependências, inicie o servidor de desenvolvimento local do Angular com o comando:
+
+```bash
+ng serve
+
+O servidor ficará ativo e irá recarregar a página automaticamente sempre que um arquivo for alterado. Você pode acessar a aplicação em seu navegador através do endereço: http://localhost:4200/
+
+---
+
+## Comandos Úteis 🛠️
+
+Durante o desenvolvimento, alguns comandos do Angular CLI são usados com frequência:
+
+### Gerar um novo componente
+Para criar toda a estrutura de arquivos de um novo componente automaticamente:
+```bash
+ng generate component nome-do-componente
+

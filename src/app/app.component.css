@@ -1,0 +1,26 @@
+.toolbar {
+  margin: 20px;
+}
+.btn-nova {
+  padding: 8px 15px;
+  background: #504d4d;
+  color: rgb(202, 198, 198);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height:40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-nova:hover {
+  opacity: 85%;
+}
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}

@@ -1,0 +1,20 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+
+<div class="toolbar">
+  <button (click)="novaTarefa()" class="btn-nova">
+    Nova tarefa
+    <i class="ph ph-plus"></i>
+  </button>
+  
+</div>
+
+<div class="container-cards">
+  <app-formulario
+    *ngFor="let t of tarefas"
+    [tarefa]="t"
+    (salvarTarefa)="atualizarTarefa($event)"
+    (cancelar)="removerTarefa(t)">
+  </app-formulario>
+</div>
