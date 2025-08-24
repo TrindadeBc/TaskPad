@@ -1,8 +1,10 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-button-primary',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './button-primary.component.html',
   styleUrl: './button-primary.component.css'
 })

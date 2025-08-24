@@ -5,15 +5,43 @@
 
     <label>Descrição tarefa</label>
     <textarea [(ngModel)]="tarefa.descricao" class="form-control textarea-descricao"></textarea>
+    
+    <label>Prazo</label>
+    <input [(ngModel)]="tarefa.prazo" 
+           class="form-control prazo-input" 
+           type="text" 
+           placeholder="DD/MM/AA HH:MM" 
+           maxlength="16" 
+           (input)="formatarPrazo($event)">
+    
     <div class="botoes">
       <button (click)="salvar()" class="btn-salvar">Salvar</button>
-      <button (click)="cancelar.emit()" class="btn-cancelar">Cancelar</button>
+      <button (click)="cancelarEdicao()" class="btn-cancelar">Cancelar</button>
     </div>
   </ng-container>
 
   <ng-template #modoVisualizacao>
-    <h3>{{ tarefa.nome }}</h3>
+    <div class="card-header">
+      <h3>{{ tarefa.nome }}</h3>
+      <i class="ph ph-gear config-icon" title="Configurações"></i>
+    </div>
     <p>{{ tarefa.descricao }}</p>
-    <button (click)="editando = true" class="btn-editar">Editar</button>
+    
+    <div class="status-container">
+      <span class="status-badge" [class]="getStatusClass()">
+        {{ getStatusText() }}
+      </span>
+    </div>
+    
+    <div class="prazo-info" *ngIf="tarefa.prazo">
+      <span class="prazo-label">Prazo: {{ tarefa.prazo }}</span>
+    </div>
+    
+    <div class="botoes-acoes">
+      <button (click)="editando = true" class="btn-editar">Editar</button>
+      <button (click)="iniciarTarefa()" class="btn-iniciar" *ngIf="tarefa.status === 'não iniciada'">Iniciar</button>
+      <button (click)="finalizarTarefa()" class="btn-finalizar" *ngIf="tarefa.status === 'iniciada'">Finalizar</button>
+      <button (click)="excluirTarefa()" class="btn-excluir">Excluir</button>
+    </div>
   </ng-template>
 </div>

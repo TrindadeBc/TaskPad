@@ -1,20 +1,36 @@
 <div>
-  <app-navbar></app-navbar>
+  <app-navbar (novaTarefa)="novaTarefa()"></app-navbar>
 </div>
 
-<div class="toolbar">
-  <button (click)="novaTarefa()" class="btn-nova">
-    Nova tarefa
-    <i class="ph ph-plus"></i>
-  </button>
-  
-</div>
+<div class="main-content">
+  <div class="tarefas-pendentes">
+    <h2>Tarefas Pendentes</h2>
+    <div class="container-cards">
+      <app-formulario
+        *ngFor="let t of tarefas"
+        [tarefa]="t"
+        (salvarTarefa)="atualizarTarefa($event)"
+        (cancelar)="cancelarEdicao($event)"
+        (iniciar)="iniciarTarefa($event)"
+        (finalizar)="finalizarTarefa($event)"
+        (excluir)="excluirTarefa($event)">
+      </app-formulario>
+    </div>
+  </div>
 
-<div class="container-cards">
-  <app-formulario
-    *ngFor="let t of tarefas"
-    [tarefa]="t"
-    (salvarTarefa)="atualizarTarefa($event)"
-    (cancelar)="removerTarefa(t)">
-  </app-formulario>
+  <div class="divisor-vertical"></div>
+
+  <div class="tarefas-finalizadas" *ngIf="tarefasFinalizadas.length > 0">
+    <h2>Tarefas Finalizadas</h2>
+    <div class="container-finalizadas">
+      <div class="card-finalizada" *ngFor="let t of tarefasFinalizadas">
+        <h4>{{ t.nome }}</h4>
+        <p>{{ t.descricao }}</p>
+        <div class="prazo-info" *ngIf="t.prazo">
+          <span class="prazo-label">Prazo: {{ t.prazo }}</span>
+        </div>
+        <span class="status-finalizada">✓ Finalizada</span>
+      </div>
+    </div>
+  </div>
 </div>

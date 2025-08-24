@@ -1,59 +1,154 @@
 .card {
-  width: 250px;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 15px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .form-control {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
+.textarea-descricao {
+  height: 100px;
+  resize: vertical;
+}
+
+.prazo-input {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
 .botoes {
   display: flex;
   gap: 10px;
+  margin-top: 15px;
 }
-.btn-salvar, .btn-cancelar, .btn-editar {
-  padding: 5px 10px;
-  border: none;
+
+.botoes-acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.config-icon {
+  font-size: 16px;
+  color: #6c757d;
   cursor: pointer;
+  padding: 4px;
   border-radius: 4px;
+  transition: all 0.2s ease;
 }
-.btn-salvar:hover {
-  opacity: 85%;
+
+.config-icon:hover {
+  color: #007bff;
+  background-color: #f8f9fa;
+}
+
+.status-container {
+  margin: 10px 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-nao-iniciada {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+}
+
+.status-iniciada {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.status-finalizada {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.prazo-info {
+  margin: 10px 0;
+  padding: 8px 12px;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  border-left: 3px solid #2196f3;
+}
+
+.prazo-label {
+  font-size: 12px;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.btn-salvar, .btn-cancelar, .btn-editar, .btn-iniciar, .btn-finalizar, .btn-excluir {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
 }
 
 .btn-salvar {
-  background-color: #1a2856;
+  background: #28a745;
   color: white;
 }
 
 .btn-cancelar {
-  background-color: #ccc;
-}
-
-.btn-editar {
-  background-color: #1a2856;
+  background: #6c757d;
   color: white;
 }
 
-.btn-editar:hover{
-    opacity: 85%;
+.btn-editar {
+  background: #007bff;
+  color: white;
 }
 
-.textarea-descricao {
-  min-height: 80px;           /* altura mínima confortável */
-  resize: vertical;           /* permite o usuário aumentar/diminuir a altura */
-  font-family: inherit;       /* mantém a mesma fonte do app */
+.btn-iniciar {
+  background: #ffc107;
+  color: #212529;
 }
 
-@media (max-width: 600px) {
-  .card {
-    width: 100%;              /* ocupa toda a largura no celular */
-  }
-  .textarea-descricao {
-    min-height: 100px;        /* mais espaço no mobile */
-  }
+.btn-finalizar {
+  background: #28a745;
+  color: white;
+}
+
+.btn-excluir {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-salvar:hover, .btn-cancelar:hover, .btn-editar:hover, .btn-iniciar:hover, .btn-finalizar:hover, .btn-excluir:hover {
+  opacity: 0.8;
 }

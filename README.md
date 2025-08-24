@@ -145,3 +145,53 @@ Para criar toda a estrutura de arquivos de um novo componente automaticamente:
 ```bash
 ng generate component nome-do-componente
 
+✨ Layout Principal e Interface do Usuário (UI)
+Navbar Vertical Fixa: A barra de navegação principal foi movida para a lateral esquerda, com design fixo e uma cor de fundo escura para melhor contraste.
+
+Menu Expansível: A navbar possui um menu que se expande ao passar o mouse, contendo o botão "Nova Tarefa" e placeholders para "Configurações" e "Perfil".
+
+Layout de Duas Colunas: A área de conteúdo principal foi dividida em duas seções:
+
+Tarefas Pendentes: Ocupa a maior parte da tela à esquerda, com um título "Tarefas Pendentes" em vermelho.
+
+Tarefas Finalizadas: Uma coluna fixa e compacta no canto direito, com fundo escuro e estilo visual reduzido para não distrair.
+
+Linha Divisória: Uma linha vertical separa claramente as tarefas pendentes das finalizadas, melhorando a organização visual.
+
+Design Responsivo: O layout foi ajustado para se adaptar a diferentes tamanhos de tela, reorganizando as colunas e margens para evitar a sobreposição de elementos em janelas menores.
+
+🚀 Gerenciamento de Tarefas (CRUD & Status)
+Sistema de Status Completo: As tarefas agora passam por um ciclo de vida claro, com status e cores distintas:
+
+⏸ Não Iniciada (Cinza)
+
+▶ Iniciada (Amarelo)
+
+✓ Finalizada (Verde)
+
+Botões de Ação Dinâmicos: Cada card de tarefa possui um conjunto de botões de ação:
+
+Iniciar (Amarelo): Aparece para tarefas "Não Iniciadas".
+
+Finalizar (Verde): Substitui o botão "Iniciar" quando uma tarefa está "Iniciada".
+
+Editar (Azul): Permite a edição dos dados da tarefa.
+
+Excluir (Vermelho): Remove permanentemente a tarefa.
+
+Ícone de Configurações: Um ícone de engrenagem (⚙️) foi adicionado a cada tarefa como um placeholder para futuras funcionalidades.
+
+🎯 Funcionalidades Avançadas
+Campo de Prazo (Data e Hora): O formulário de criação de tarefas agora inclui um campo "Prazo" unificado.
+
+Formatação Automática: Ao digitar no campo "Prazo", o formato DD/MM/AA HH:MM é aplicado automaticamente, com as barras (/) e os dois pontos (:) sendo inseridos de forma inteligente.
+
+Ordenação por Prazo: As tarefas na coluna "Pendentes" são automaticamente ordenadas pela data de prazo, com a mais urgente aparecendo primeiro.
+
+🔧 Correções de Bugs e Melhorias Técnicas
+Botão Cancelar: O bug que fazia o botão "Cancelar" na edição apagar a tarefa foi corrigido. Agora ele apenas reverte a edição.
+
+Estrutura de Componentes: O projeto foi estabilizado para usar a abordagem de componentes standalone do Angular, resolvendo diversos erros de compilação e a "tela branca".
+
+Estilos e Layout: Múltiplos ajustes foram feitos no CSS para corrigir problemas de alinhamento e sobreposição, garantindo uma experiência visual consistente.
+
