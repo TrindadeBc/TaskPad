@@ -50,4 +50,15 @@ public class TarefaController {
         }
     }
 
+    @PatchMapping("/{id}/concluir")
+    public ResponseEntity<Void> concluirTarefa(@PathVariable Long id) {
+        Tarefa tarefa = tarefaRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada"));
+
+        tarefa.setStatus("CONCLUÍDA");
+        tarefaRepository.save(tarefa);
+
+        return ResponseEntity.noContent().build();
+    }
+
 }
