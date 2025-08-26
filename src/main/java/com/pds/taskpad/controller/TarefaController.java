@@ -4,6 +4,7 @@ import com.pds.taskpad.model.Tarefa;
 import com.pds.taskpad.repository.TarefaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -37,6 +38,16 @@ public class TarefaController {
         tarefa.setStatus(tarefaAtualizada.getStatus());
 
         return tarefaRepository.save(tarefa);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluirTarefa(@PathVariable Long id) {
+        if (tarefaRepository.existsById(id)) {
+            tarefaRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
     }
 
 }
