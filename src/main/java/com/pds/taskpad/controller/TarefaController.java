@@ -35,7 +35,7 @@ public class TarefaController {
         tarefa.setNome(tarefaAtualizada.getNome());
         tarefa.setDescricao(tarefaAtualizada.getDescricao());
         tarefa.setData(tarefaAtualizada.getData());
-        tarefa.setStatus(tarefaAtualizada.getStatus());
+        tarefa.setStatus(tarefaAtualizada.isStatus());
 
         return tarefaRepository.save(tarefa);
     }
@@ -55,10 +55,18 @@ public class TarefaController {
         Tarefa tarefa = tarefaRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada"));
 
-        tarefa.setStatus("CONCLUÍDA");
+        tarefa.setStatus(true);
         tarefaRepository.save(tarefa);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/filtrar")
+    public List<Tarefa> listarTarefasPorStatus(@RequestParam(required = false) Boolean status) {
+        if (status == null) {
+            return tarefaRepository.findAll();
+        }
+        return tarefaRepository.findByStatus(status);
     }
 
 }

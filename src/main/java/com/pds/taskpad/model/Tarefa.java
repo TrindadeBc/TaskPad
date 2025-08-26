@@ -15,7 +15,7 @@ public class Tarefa {
     private String nome;
     private String descricao;
     private LocalDate data;
-    private String status; // Ex: "pendente", "concluída"
+    private boolean status; // true = concluída, false = pendente
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class Tarefa {
         this.data = data;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
