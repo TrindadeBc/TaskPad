@@ -15,6 +15,7 @@
     *ngFor="let t of tarefas"
     [tarefa]="t"
     (salvarTarefa)="atualizarTarefa($event)"
+    (excluirTarefa)="removerTarefa($event)"
     (cancelar)="removerTarefa(t)">
   </app-formulario>
 </div>

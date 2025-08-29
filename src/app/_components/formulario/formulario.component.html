@@ -1,5 +1,5 @@
 <div class="card">
-  <ng-container *ngIf="editando; else modoVisualizacao">
+  <ng-container *ngIf="tarefa.editando; else modoVisualizacao">
     <label>Nome tarefa</label>
     <input [(ngModel)]="tarefa.nome" class="form-control" type="text">
 
@@ -7,13 +7,13 @@
     <textarea [(ngModel)]="tarefa.descricao" class="form-control textarea-descricao"></textarea>
     <div class="botoes">
       <button (click)="salvar()" class="btn-salvar">Salvar</button>
-      <button (click)="cancelar.emit()" class="btn-cancelar">Cancelar</button>
+      <button (click)="excluir()" class="btn-excluir">Excluir</button>
     </div>
   </ng-container>
 
   <ng-template #modoVisualizacao>
     <h3>{{ tarefa.nome }}</h3>
     <p>{{ tarefa.descricao }}</p>
-    <button (click)="editando = true" class="btn-editar">Editar</button>
+    <button (click)="tarefa.editando = true" class="btn-editar">Editar</button>
   </ng-template>
 </div>

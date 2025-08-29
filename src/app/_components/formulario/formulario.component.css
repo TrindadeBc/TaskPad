@@ -15,7 +15,7 @@
   display: flex;
   gap: 10px;
 }
-.btn-salvar, .btn-cancelar, .btn-editar {
+.btn-salvar, .btn-cancelar, .btn-editar, .btn-excluir {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
@@ -40,6 +40,15 @@
 }
 
 .btn-editar:hover{
+    opacity: 85%;
+}
+
+.btn-excluir {
+  background-color: #dd1111ff;
+  color: white;
+}
+
+.btn-excluir:hover{
     opacity: 85%;
 }
 
