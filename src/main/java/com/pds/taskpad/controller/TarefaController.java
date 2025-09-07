@@ -2,6 +2,7 @@ package com.pds.taskpad.controller;
 
 import com.pds.taskpad.model.Tarefa;
 import com.pds.taskpad.repository.TarefaRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class TarefaController {
     private TarefaRepository tarefaRepository;
 
     @PostMapping
-    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
+    public Tarefa criarTarefa(@Valid @RequestBody Tarefa tarefa) {
         return tarefaRepository.save(tarefa);
     }
 
@@ -28,7 +29,7 @@ public class TarefaController {
     }
 
     @PutMapping("/{id}")
-    public Tarefa atualizarTarefa(@PathVariable Long id, @RequestBody Tarefa tarefaAtualizada) {
+    public Tarefa atualizarTarefa(@PathVariable Long id, @Valid @RequestBody Tarefa tarefaAtualizada) {
         Tarefa tarefa = tarefaRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada"));
 
