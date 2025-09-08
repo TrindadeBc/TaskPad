@@ -33,20 +33,26 @@ export class AppComponent implements OnInit {
   }
 
   novaTarefa() {
-  const nova: Tarefa = { nome: '', descricao: '', status: false };
-  this.tarefaService.criar(nova).subscribe({
-    next: (tarefaCriada) => {
-      // marca que deve iniciar em edição
-      (tarefaCriada as any).editando = true; 
-      this.tarefas.push(tarefaCriada);
-    },
-    error: (err) => console.error('Erro ao criar tarefa:', err)
-  });
-}
+    const nova: Tarefa & { editando?: boolean}= { nome: '', descricao: '', status: false, editando: true };
+
+    this.tarefas.push(nova); // 🔹 só adiciona na lista para edição
+  }
 
 
   atualizarTarefa(tarefa: Tarefa) {
-    if (!tarefa.id) return; // precisa de ID
+  if (!tarefa.id) {
+    // 🔹 nova tarefa → cria no backend
+    this.tarefaService.criar(tarefa).subscribe({
+      next: (tarefaCriada) => {
+        const index = this.tarefas.indexOf(tarefa);
+        if (index > -1) {
+          this.tarefas[index] = tarefaCriada; // substitui a versão local pela do backend
+        }
+      },
+      error: (err) => console.error('Erro ao criar tarefa:', err)
+    });
+  } else {
+    // 🔹 edição de tarefa existente
     this.tarefaService.atualizar(tarefa).subscribe({
       next: (tarefaAtualizada) => {
         const index = this.tarefas.findIndex(t => t.id === tarefaAtualizada.id);
@@ -55,6 +61,8 @@ export class AppComponent implements OnInit {
       error: (err) => console.error('Erro ao atualizar tarefa:', err)
     });
   }
+}
+
 
   removerTarefa(tarefa: Tarefa) {
     const index = this.tarefas.indexOf(tarefa);

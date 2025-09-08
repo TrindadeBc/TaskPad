@@ -24,16 +24,25 @@ export class FormularioComponent {
   editando = false;
 
   salvar() {
-    if (this.tarefa.nome.trim()) {
-      if (!this.tarefa.data) {
-        // gera data em ISO (UTC)
-        this.tarefa.data = new Date().toISOString();
-      }
+    if (!this.tarefa.nome || !this.tarefa.descricao) return; // validação extra
 
-      this.tarefa.editando = false;
+    // gera data no fuso de Brasília (ISO sem Z)
+    if (!this.tarefa.data) {
+      const agora = new Date();
+      this.tarefa.data = agora.toISOString(); // ou toLocaleString formatado
+    }
+
+    this.tarefa.editando = false;
+
+    // 🔹 se não tem id, é nova → cria no backend
+    if (!this.tarefa.id) {
+      this.salvarTarefa.emit({ ...this.tarefa });
+    } else {
+      // 🔹 se já tem id, é edição → atualiza
       this.salvarTarefa.emit(this.tarefa);
     }
   }
+
 
 
   excluir() {
