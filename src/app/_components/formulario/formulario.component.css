@@ -15,7 +15,7 @@
   display: flex;
   gap: 10px;
 }
-.btn-salvar, .btn-cancelar, .btn-editar, .btn-excluir {
+.btn-salvar, .btn-cancelar, .btn-editar, .btn-excluir, .btn-concluir {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
@@ -30,6 +30,15 @@
   color: white;
 }
 
+.btn-concluir:hover {
+  opacity: 85%;
+}
+
+.btn-concluir {
+  background-color: #28a745;
+  color: white;
+}
+
 .btn-cancelar {
   background-color: #ccc;
 }
@@ -40,7 +49,7 @@
 }
 
 .btn-editar:hover{
-    opacity: 85%;
+  opacity: 85%;
 }
 
 .btn-excluir {
@@ -56,6 +65,21 @@
   min-height: 80px;           /* altura mínima confortável */
   resize: vertical;           /* permite o usuário aumentar/diminuir a altura */
   font-family: inherit;       /* mantém a mesma fonte do app */
+}
+.erro {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.tag-concluida {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
 }
 
 @media (max-width: 600px) {

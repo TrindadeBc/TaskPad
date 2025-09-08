@@ -10,12 +10,30 @@
   
 </div>
 
+<div class="titulos">
+  <h3>Tarefas Pendentes</h3>  
+</div>
+
 <div class="container-cards">
   <app-formulario
-    *ngFor="let t of tarefas"
+    *ngFor="let t of tarefasPendentes"
     [tarefa]="t"
     (salvarTarefa)="atualizarTarefa($event)"
     (excluirTarefa)="removerTarefa($event)"
-    (cancelar)="removerTarefa(t)">
+    (cancelar)="removerTarefa(t)"
+    (concluir)="atualizarTarefa($event)">
+  </app-formulario>
+</div>
+
+<div class="titulos">
+  <h3>Tarefas Concluídas</h3>  
+</div>
+
+<div class="container-cards">
+  <app-formulario
+    *ngFor="let t of tarefasConcluidas"
+    [tarefa]="t"
+    (salvarTarefa)="atualizarTarefa($event)"
+    (excluirTarefa)="removerTarefa($event)">
   </app-formulario>
 </div>

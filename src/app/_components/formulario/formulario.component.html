@@ -1,19 +1,54 @@
 <div class="card">
   <ng-container *ngIf="tarefa.editando; else modoVisualizacao">
-    <label>Nome tarefa</label>
-    <input [(ngModel)]="tarefa.nome" class="form-control" type="text">
+    <form #formTarefa="ngForm" (ngSubmit)="salvar()">
+      <label>Nome tarefa</label>
+      <input 
+        [(ngModel)]="tarefa.nome" 
+        name="nome" 
+        class="form-control" 
+        type="text" 
+        required 
+        minlength="1"
+        #nomeCtrl="ngModel">
 
-    <label>Descrição tarefa</label>
-    <textarea [(ngModel)]="tarefa.descricao" class="form-control textarea-descricao"></textarea>
-    <div class="botoes">
-      <button (click)="salvar()" class="btn-salvar">Salvar</button>
-      <button (click)="excluir()" class="btn-excluir">Excluir</button>
-    </div>
+      <!-- mensagem de erro -->
+      <div class="erro" *ngIf="nomeCtrl.invalid && nomeCtrl.touched">
+        O nome da tarefa deve ser preenchido
+      </div>
+
+      <label>Descrição tarefa</label>
+      <textarea 
+        [(ngModel)]="tarefa.descricao" 
+        name="descricao" 
+        class="form-control textarea-descricao" 
+        required
+        minlength="5"
+        #descCtrl="ngModel"></textarea>
+
+      <!-- mensagem de erro -->
+      <div class="erro" *ngIf="descCtrl.invalid && descCtrl.touched">
+        A descrição deve ter pelo menos 5 caracteres.
+      </div>
+
+      <div class="botoes">
+        <!-- botão desabilitado se form inválido -->
+        <button type="submit" [disabled]="formTarefa.invalid" class="btn-salvar">Salvar</button>
+        <button type="button" (click)="excluir()" class="btn-excluir">Excluir</button>
+      </div>
+    </form>
   </ng-container>
 
   <ng-template #modoVisualizacao>
     <h3>{{ tarefa.nome }}</h3>
     <p>{{ tarefa.descricao }}</p>
-    <button (click)="tarefa.editando = true" class="btn-editar">Editar</button>
+
+    <div class="botoes" *ngIf="!tarefa.status; else tagConcluida">
+      <button (click)="tarefa.editando = true" class="btn-editar">Editar</button>
+      <button (click)="concluirTarefa()" class="btn-concluir">Concluir</button>
+    </div>
+
+    <ng-template #tagConcluida>
+      <span class="tag-concluida">✔ Concluída em {{ tarefa.data }}</span>
+    </ng-template>
   </ng-template>
 </div>

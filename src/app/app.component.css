@@ -1,6 +1,12 @@
 .toolbar {
   margin: 20px;
 }
+
+.titulos{
+  margin:0;
+  padding:20px;
+}
+
 .btn-nova {
   padding: 8px 15px;
   background: #1a2856;

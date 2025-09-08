@@ -20,6 +20,11 @@ export class AppComponent implements OnInit {
       this.carregarTarefas();
   }
 
+  concluirTarefa(tarefa: Tarefa) {
+    tarefa.status = true;
+    this.atualizarTarefa(tarefa);
+  }
+
   carregarTarefas() {
     this.tarefaService.listar().subscribe({
       next: (tarefas) => (this.tarefas = tarefas),
@@ -52,10 +57,18 @@ export class AppComponent implements OnInit {
   }
 
   removerTarefa(tarefa: Tarefa) {
-  const index = this.tarefas.indexOf(tarefa);
-  if (index > -1) {
-    this.tarefas.splice(index, 1);
-    this.tarefaService.deletar(tarefa.id!).subscribe();
+    const index = this.tarefas.indexOf(tarefa);
+      if (index > -1) {
+        this.tarefas.splice(index, 1);
+        this.tarefaService.deletar(tarefa.id!).subscribe();
+      }
   }
-}
+
+  get tarefasPendentes(): Tarefa[] {
+    return this.tarefas.filter(t => !t.status);
+  }
+
+  get tarefasConcluidas(): Tarefa[] {
+    return this.tarefas.filter(t => t.status);
+  }
 }

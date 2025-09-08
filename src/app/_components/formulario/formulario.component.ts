@@ -14,16 +14,27 @@ export class FormularioComponent {
   @Output() salvarTarefa = new EventEmitter<Tarefa>();
   @Output() cancelar = new EventEmitter<Tarefa>();
   @Output() excluirTarefa = new EventEmitter<Tarefa>();
+  @Output() concluir = new EventEmitter<Tarefa>();
+
+  concluirTarefa() {
+    this.tarefa.status = true; // marca como concluída
+    this.concluir.emit(this.tarefa);
+  }
 
   editando = false;
 
-
   salvar() {
-  if (this.tarefa.nome.trim()) {
-    this.tarefa.editando = false; // finaliza modo edição
-    this.salvarTarefa.emit(this.tarefa);
+    if (this.tarefa.nome.trim()) {
+      if (!this.tarefa.data) {
+        // gera data em ISO (UTC)
+        this.tarefa.data = new Date().toISOString();
+      }
+
+      this.tarefa.editando = false;
+      this.salvarTarefa.emit(this.tarefa);
+    }
   }
-}
+
 
   excluir() {
     this.excluirTarefa.emit(this.tarefa); // 🔹 emite para o pai excluir
