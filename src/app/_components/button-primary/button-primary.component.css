@@ -1,0 +1,15 @@
+.custom-button {
+    height:40px;
+    padding:10px 15px;
+    border: none;
+    border-radius: 0px 6px 6px 0px; /* reto à esquerda */
+    font-size: 16px;
+    background: #1a2856;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-button:hover {
+    opacity:90%;
+}
