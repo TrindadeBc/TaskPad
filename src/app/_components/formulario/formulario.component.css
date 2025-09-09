@@ -1,0 +1,92 @@
+.card {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.form-control {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+.btn-salvar, .btn-cancelar, .btn-editar, .btn-excluir, .btn-concluir {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn-salvar:hover {
+  opacity: 85%;
+}
+
+.btn-salvar {
+  background-color: #1a2856;
+  color: white;
+}
+
+.btn-concluir:hover {
+  opacity: 85%;
+}
+
+.btn-concluir {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+}
+
+.btn-editar {
+  background-color: #1a2856;
+  color: white;
+}
+
+.btn-editar:hover{
+  opacity: 85%;
+}
+
+.btn-excluir {
+  background-color: #dd1111ff;
+  color: white;
+}
+
+.btn-excluir:hover{
+    opacity: 85%;
+}
+
+.textarea-descricao {
+  min-height: 80px;           /* altura mínima confortável */
+  resize: vertical;           /* permite o usuário aumentar/diminuir a altura */
+  font-family: inherit;       /* mantém a mesma fonte do app */
+}
+.erro {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.tag-concluida {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;              /* ocupa toda a largura no celular */
+  }
+  .textarea-descricao {
+    min-height: 100px;        /* mais espaço no mobile */
+  }
+}
