@@ -12,3 +12,5 @@ O TaskPad é um **sistema de gerenciamento de tarefas** desenvolvido para facili
 6. Listar tarefas por status
 7. Manter tarefas salvas durante a sessão
 8. Validar dados da tarefa antes de salvar
+
+Para mais informações sobre o projeto, acesse: [Página WiKi - TaskPad](https://github.com/TrindadeBc/TaskPad/wiki)
